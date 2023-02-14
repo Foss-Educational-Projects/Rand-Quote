@@ -1,0 +1,25 @@
+@use './modules/quote/quote.index.scss';
+@use './modules/app/app.index.scss';
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+}
+#root {
+	width: inherit;
+	height: inherit;
+}
+.App {
+	width: inherit;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+}
+
