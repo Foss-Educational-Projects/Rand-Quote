@@ -1,3 +1,4 @@
+@use "~bootstrap/scss/bootstrap.scss";
 @use './modules/quote/quote.index.scss';
 @use './modules/app/app.index.scss';
 * {
@@ -16,6 +17,7 @@ html, body {
 .App {
 	width: inherit;
 	height: inherit;
+	background-color: rgba(0,0,0,0.85);
 	display: flex;
 	align-items: center;
 	flex-direction: column;

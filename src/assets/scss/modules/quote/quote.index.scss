@@ -1,25 +1,41 @@
 :root {
-	--quote-box-bg-color: pink;
+	--quote-box-bg-color: rgba(255,255,255,0.15);
 	--quote-box-fg-color: whitesmoke;
 	--quote-box-icon-color:indigo;
 }
 .quote-container {
-	// width: 800px;
-	max-width: 800px;
+	display: flex;
+	max-width: 600px;
 	max-height: 600px;
+	transition: max-width, max-height, 300ms ease-in;
 	padding: 15px;
 	border-radius: 10px;
 	color: var(--quote-box-fg-color);
+	backdrop-filter: blur(2.5px);
 	background-color: var(--quote-box-bg-color);
+	animation-name: ambient-light;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+@keyframes ambient-light {
+	0% { box-shadow: 0 0 10px orangered; }
+	20% { box-shadow: 0 0 15px gold; }
+	40% { box-shadow: 0 0 20px rebeccapurple; }
+	60% { box-shadow: 0 0 20px teal; }
+	80% { box-shadow: 0 0 15px yellowgreen; }
+	100% { box-shadow: 0 0 10px orangered; }
 }
 .quote-box {
+	width: fit-content;
 	display: grid;
 	grid-gap: 10px;
-	grid-template-columns: 30px 1fr;
+	grid-template-areas: 30px 1fr;
+	grid-template-areas: "text" "author" "button";
 }
 .quote-box-icon {
 	display: flex;
-	justify-content: flex-start;align-items: flex-start;
+	justify-content: flex-start;
+	align-items: flex-start;
 	i {
 		color: var(--quote-box-icon-color);
 		font-size: 36px;
@@ -28,17 +44,27 @@
 	}
 }
 .quote-box-text {
+	grid-area: text;
 	margin-top: 5px;
 	p {
 		font-size: 24px;
 	}
 }
 .quote-box-author {
+	grid-area: author;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	.quote-box-author-hyphen {
 		margin-right: 10px;
 		font-size: 36px;
+	}
+}
+.quote-box-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	a i.fa-tumblr {
+		color: black;
 	}
 }
